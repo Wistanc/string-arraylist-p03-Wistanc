@@ -19,6 +19,22 @@ public class Word{
             }
         return a;
     }
+        
+       Modified
+       {
+           String temp= " ";
+           for(int i=0;i<word.length()-1;i++){
+               String a=word.substring(i,i+1);
+               String b=word.substring(i+1,i+2);
+               if(a.equals("A")&&!b.equals("A")){
+                   temp+=b+a;
+                   i++
+               }else{
+                  temp+=a;
+               }
+           }
+               return temp;
+           }
     /** Modifies wordList by replacing each word with its scrambled
      *  version, removing any words that are unchanged as a result of scrambling.
      *  @param wordList the list of words
@@ -30,7 +46,7 @@ public class Word{
      *    before the method was called
      */
     public static void scrambleOrRemove(List<String> wordList){
-     for(i=0;i<wordList.size;i++){ 
+      for(i=0;i<wordList.size();i++){ 
       String s= scrambleWord(wordList.get(i));
       if(wordList.get(i).equals(s)){
            wordList.remove(i);
